@@ -32,3 +32,9 @@ build:
         code: |
           ls -la app/build/apk/
           cp app/build/apk/*.apk $WERCKER_REPORT_ARTIFACTS_DIR
+deploy:
+  steps:
+    - script:
+        name: upload to testfairy
+        code: |
+          curl https://app.testfairy.com/api/upload/ -F file=@app/build/apk/GettingStarted-debug-unaligned.apk -F api_key="$TESTFAIRY_API_KEY" -F notes="Deploy of commit: $WERCKER_GIT_COMMIT from branch: $WERCKER_GIT_BRANCH" -F testers_groups='me'

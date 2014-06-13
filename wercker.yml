@@ -36,3 +36,4 @@ deploy:
     - fly1tkg/testfairy:
         api_key: $TESTFAIRY_API_KEY
         apk_file: app/build/outputs/apk/app-debug-unaligned.apk
+        testers_groups: me

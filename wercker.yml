@@ -6,6 +6,8 @@ build:
     - script:
         name: show base information
         code: |
+          ls -la
+          ls -la $WERCKER_SOURCE_DIR
           gradle -v
           echo $ANDROID_HOME
           echo $ANDROID_SDK_VERSION

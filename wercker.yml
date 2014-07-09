@@ -15,7 +15,7 @@ build:
         name: sdk
         code: |
           android list sdk --extended -a
-    - setup-android-emulator:
+    - fly1tkg/setup-android-emulator-with-sdcard:
         target: android-19
     - script:
         name: run gradle connectedCheck
